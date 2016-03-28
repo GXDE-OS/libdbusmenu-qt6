@@ -1,6 +1,7 @@
 libdbusmenu-qt (0.9.3+16.04.20160218-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * Migrate to dbgsym packages.
 
  -- Felix Geyer <fgeyer@debian.org>  Mon, 28 Mar 2016 13:09:05 +0200
 

@@ -26,8 +26,8 @@ override_dh_install:
 	dh_install --fail-missing
 
 override_dh_strip:
-	dh_strip -plibdbusmenu-qt5-2 --dbg-package=libdbusmenu-qt5-dbg
-	dh_strip --remaining-packages --dbg-package=libdbusmenu-qt-dbg
+	dh_strip -plibdbusmenu-qt5-2 --dbgsym-migration='libdbusmenu-qt5-dbg (<< 0.9.3+16.04.20160218)'
+	dh_strip --remaining-packages --dbgsym-migration='libdbusmenu-qt-dbg (<< 0.9.3+16.04.20160218)'
 
 override_dh_auto_test:
 	# Skipping tests (can't test inside chroot)...

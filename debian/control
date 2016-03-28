@@ -102,33 +102,3 @@ Description: Qt implementation of the DBusMenu protocol (documentation)
  and import their menus over D-Bus.
  .
  This package provides API documentation in HTML format.
-
-Package: libdbusmenu-qt-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Multi-Arch: same
-Depends: libdbusmenu-qt2 (= ${binary:Version}),
- ${misc:Depends}
-Description: Qt implementation of the DBusMenu protocol (debug)
- This library provides a Qt implementation of the DBusMenu protocol.
- .
- The DBusMenu protocol makes it possible for applications to export
- and import their menus over D-Bus.
- .
- This package contains the debugging symbols for libdbusmenu-qt2.
-
-Package: libdbusmenu-qt5-dbg
-Architecture: any
-Section: debug
-Priority: extra
-Multi-Arch: same
-Depends: libdbusmenu-qt5-2 (= ${binary:Version}),
- ${misc:Depends}
-Description: Qt implementation of the DBusMenu protocol (debug)
- This library provides a Qt implementation of the DBusMenu protocol.
- .
- The DBusMenu protocol makes it possible for applications to export
- and import their menus over D-Bus.
- .
- This package contains the debugging symbols for libdbusmenu-qt5-2.
