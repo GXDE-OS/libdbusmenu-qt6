@@ -1,3 +1,12 @@
+libdbusmenu-qt (0.9.3+16.04.20160218-2) unstable; urgency=medium
+
+  * Team upload.
+  * Drop Qt4 support (Closes: #875021)
+  * Update Vcs-* to point to salsa
+  * Update symbols files
+
+ -- Scott Kitterman <scott@kitterman.com>  Sun, 25 Aug 2019 12:07:44 -0400
+
 libdbusmenu-qt (0.9.3+16.04.20160218-1) unstable; urgency=medium
 
   * Team upload.
