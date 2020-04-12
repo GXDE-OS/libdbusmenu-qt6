@@ -1,3 +1,9 @@
+libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
+
+  * Trim trailing whitespace.
+
+ -- Debian Janitor <janitor@jelmer.uk>  Sun, 12 Apr 2020 05:26:18 +0000
+
 libdbusmenu-qt (0.9.3+16.04.20160218-2) unstable; urgency=medium
 
   * Team upload.
@@ -132,9 +138,9 @@ libdbusmenu-qt (0.8.0-1) unstable; urgency=low
 
 libdbusmenu-qt (0.7.0-1) unstable; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
   * DM upload is allowed.
-  * adding libqjson-dev to build dependencies (for testapp). 
+  * adding libqjson-dev to build dependencies (for testapp).
 
  -- Praveen Arimbrathodiyil <pravi.a@gmail.com>  Sat, 19 Mar 2011 11:03:22 +0530
 
