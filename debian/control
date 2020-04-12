@@ -1,7 +1,7 @@
 Source: libdbusmenu-qt
 Section: libs
 Priority: optional
-Build-Depends: debhelper (>= 12~),
+Build-Depends: debhelper-compat (= 12),
  cmake (>= 2.8.11),
  qtbase5-dev,
  pkg-config,

@@ -3,6 +3,7 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
   * Trim trailing whitespace.
   * Use secure copyright file specification URI.
   * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
 
  -- Debian Janitor <janitor@jelmer.uk>  Sun, 12 Apr 2020 05:26:18 +0000
 
