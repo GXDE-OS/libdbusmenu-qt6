@@ -35,6 +35,7 @@ Architecture: any
 Depends: libdbusmenu-qt5-2 (= ${binary:Version}),
  qtbase5-dev,
  ${misc:Depends}
+Multi-Arch: same
 Description: Qt implementation of the DBusMenu protocol (development)
  This library provides a Qt implementation of the DBusMenu protocol.
  .
@@ -50,6 +51,7 @@ Architecture: all
 Depends: libjs-jquery,
  ${misc:Depends}
 Suggests: w3m | www-browser
+Multi-Arch: foreign
 Description: Qt implementation of the DBusMenu protocol (documentation)
  This library provides a Qt implementation of the DBusMenu protocol.
  .
