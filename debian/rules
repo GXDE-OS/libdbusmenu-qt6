@@ -21,6 +21,3 @@ override_dh_strip:
 override_dh_auto_test:
 	# Skipping tests (can't test inside chroot)...
 	:
-
-override_dh_missing:
-	dh_missing --fail-missing

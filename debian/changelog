@@ -6,6 +6,10 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
   * Set debhelper-compat version in Build-Depends.
   * Drop unnecessary dh arguments: --parallel
   * Drop transition for old debug package migration.
+  * Bump debhelper from old 12 to 13.
+    + debian/rules: Drop --fail-missing argument to dh_missing, which is now the
+      default.
+  * Set upstream metadata fields: Repository-Browse.
 
  -- Debian Janitor <janitor@jelmer.uk>  Sun, 12 Apr 2020 05:26:18 +0000
 
