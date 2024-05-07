@@ -4,7 +4,7 @@ Priority: optional
 Build-Depends: debhelper-compat (= 13),
  cmake (>= 2.8.11),
  qtbase5-dev,
- pkg-config,
+ pkgconf,
  doxygen
 Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Pino Toscano <pino@debian.org>
