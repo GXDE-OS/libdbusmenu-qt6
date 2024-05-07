@@ -1,4 +1,4 @@
-libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
+libdbusmenu-qt (0.9.3+16.04.20160218-3) unstable; urgency=medium
 
   [ Debian Janitor ]
   * Trim trailing whitespace.
@@ -30,7 +30,7 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
   * Drop debian/not-installed, as it lists either non-existing stuff, or stuff
     actually installed.
 
- -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Sun, 12 Apr 2020 05:26:18 +0000
+ -- Pino Toscano <pino@debian.org>  Tue, 07 May 2024 11:39:44 +0200
 
 libdbusmenu-qt (0.9.3+16.04.20160218-2) unstable; urgency=medium
 
