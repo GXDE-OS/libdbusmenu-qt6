@@ -1,5 +1,6 @@
 libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
 
+  [ Debian Janitor ]
   * Trim trailing whitespace.
   * Use secure copyright file specification URI.
   * Bump debhelper from old 9 to 12.
@@ -11,7 +12,7 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
       default.
   * Set upstream metadata fields: Repository-Browse.
 
- -- Debian Janitor <janitor@jelmer.uk>  Sun, 12 Apr 2020 05:26:18 +0000
+ -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Sun, 12 Apr 2020 05:26:18 +0000
 
 libdbusmenu-qt (0.9.3+16.04.20160218-2) unstable; urgency=medium
 
