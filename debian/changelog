@@ -20,6 +20,7 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
   * Switch the transitional pkg-config build dependency to pkgconf.
   * Update lintian overrides.
   * Drop non-existing Files from the doc-base file.
+  * Bump Standards-Version to 4.7.0, no changes required.
 
  -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Sun, 12 Apr 2020 05:26:18 +0000
 
