@@ -7,9 +7,7 @@ Build-Depends: debhelper-compat (= 13),
  pkg-config,
  doxygen
 Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
-Uploaders: Praveen Arimbrathodiyil <pravi.a@gmail.com>,
- Modestas Vainius <modax@debian.org>,
- Pino Toscano <pino@debian.org>
+Uploaders: Pino Toscano <pino@debian.org>
 Standards-Version: 3.9.6
 Homepage: https://launchpad.net/libdbusmenu-qt
 Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt.git
