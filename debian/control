@@ -9,6 +9,7 @@ Build-Depends: debhelper-compat (= 13),
 Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Pino Toscano <pino@debian.org>
 Standards-Version: 3.9.6
+Rules-Requires-Root: no
 Homepage: https://launchpad.net/libdbusmenu-qt
 Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt

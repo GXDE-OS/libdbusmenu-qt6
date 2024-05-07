@@ -16,6 +16,7 @@ libdbusmenu-qt (0.9.3+16.04.20160218-3) UNRELEASED; urgency=medium
   * Add the configuration for the CI on salsa.
   * Remove inactive Uploaders.
   * Bump watch file to v4, no changes needed.
+  * Add Rules-Requires-Root: no.
 
  -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Sun, 12 Apr 2020 05:26:18 +0000
 
