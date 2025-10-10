@@ -1,12 +1,11 @@
-libdbusmenu-qt (0.9.3+16.04.20160218-4) UNRELEASED; urgency=medium
+libdbusmenu-qt (0.9.3+16.04.20160218-4) unstable; urgency=medium
 
-  [ Pino Toscano ]
   * Drop Rules-Requires-Root: no, no more needed since Debian trixie.
   * Bump Standards-Version to 4.7.2, no changes required.
   * Pass -DCMAKE_POLICY_VERSION_MINIMUM=3.5 to cmake so it builds with cmake 4
     (hoping that everything works properly). (Closes: #1113135)
 
- -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Fri, 10 Oct 2025 06:27:26 +0200
+ -- Pino Toscano <pino@debian.org>  Fri, 10 Oct 2025 06:55:37 +0200
 
 libdbusmenu-qt (0.9.3+16.04.20160218-3) unstable; urgency=medium
 
