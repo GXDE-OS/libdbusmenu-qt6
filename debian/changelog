@@ -1,3 +1,8 @@
+libdbusmenu-qt (0.9.3+16.04.20160218-4) UNRELEASED; urgency=medium
+
+
+ -- Debian Krap Maintainers <debian-qt-kde@lists.debian.org>  Fri, 10 Oct 2025 06:27:26 +0200
+
 libdbusmenu-qt (0.9.3+16.04.20160218-3) unstable; urgency=medium
 
   [ Debian Janitor ]
