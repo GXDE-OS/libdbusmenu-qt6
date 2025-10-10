@@ -7,7 +7,7 @@
 	dh $@ --buildsystem=cmake
 
 override_dh_auto_configure:
-	QT_SELECT=qt5 dh_auto_configure -- -DUSE_QT5=True -DWITH_DOC=$(if $(filter libdbusmenu-qt5-doc, $(shell dh_listpackages)),ON,OFF)
+	QT_SELECT=qt5 dh_auto_configure -- -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DUSE_QT5=True -DWITH_DOC=$(if $(filter libdbusmenu-qt5-doc, $(shell dh_listpackages)),ON,OFF)
 
 execute_after_dh_auto_install-indep:
 	# Removing embedded jquery javascript library
