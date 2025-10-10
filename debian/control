@@ -9,7 +9,7 @@ Build-Depends-Indep:
  doxygen
 Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Pino Toscano <pino@debian.org>
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://launchpad.net/libdbusmenu-qt
 Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt
