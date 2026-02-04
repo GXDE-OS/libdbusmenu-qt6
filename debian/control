@@ -1,6 +1,5 @@
 Source: libdbusmenu-qt
 Section: libs
-Priority: optional
 Build-Depends: debhelper-compat (= 13),
  cmake (>= 2.8.11),
  qtbase5-dev,
@@ -9,7 +8,7 @@ Build-Depends-Indep:
  doxygen
 Maintainer: Debian Krap Maintainers <debian-qt-kde@lists.debian.org>
 Uploaders: Pino Toscano <pino@debian.org>
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Homepage: https://launchpad.net/libdbusmenu-qt
 Vcs-Git: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt.git
 Vcs-Browser: https://salsa.debian.org/qt-kde-team/extras/libdbusmenu-qt
