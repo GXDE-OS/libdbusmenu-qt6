@@ -1,3 +1,17 @@
+libdbusmenu-qt (0.9.3+16.04.20160218-5) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Boyuan Yang ]
+  * d/control: Bump Standards-Version to 4.7.3. Drop Priority: optional.
+  * d/control: move package description to source package section.
+  * d/control: Use Debian KDE Extras Team as package maintainer.
+
+  [ Debian Janitor ]
+  * d/control: Drop unnecessary version constraint of cmake.
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 04 Feb 2026 14:16:36 -0500
+
 libdbusmenu-qt (0.9.3+16.04.20160218-4) unstable; urgency=medium
 
   * Drop Rules-Requires-Root: no, no more needed since Debian trixie.
