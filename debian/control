@@ -1,8 +1,8 @@
-Source: libdbusmenu-qt
+Source: libdbusmenu-qt6
 Section: libs
 Build-Depends: debhelper-compat (= 13),
  cmake,
- qtbase5-dev,
+ qt6-base-dev,
  pkgconf,
 Build-Depends-Indep:
  doxygen
@@ -18,7 +18,7 @@ Description: Qt implementation of the DBusMenu protocol
  The DBusMenu protocol makes it possible for applications to export
  and import their menus over D-Bus.
 
-Package: libdbusmenu-qt5-2
+Package: libdbusmenu-qt6-2
 Architecture: any
 Pre-Depends: ${misc:Pre-Depends}
 Depends: ${misc:Depends},
@@ -27,12 +27,12 @@ Multi-Arch: same
 Description: ${source:Synopsis}
  ${source:Extended-Description}
  .
- This package provides the libdbusmenu-qt2 shared library.
+ This package provides the libdbusmenu-qt6 shared library.
 
-Package: libdbusmenu-qt5-dev
+Package: libdbusmenu-qt6-dev
 Section: libdevel
 Architecture: any
-Depends: libdbusmenu-qt5-2 (= ${binary:Version}),
+Depends: libdbusmenu-qt6-2 (= ${binary:Version}),
  qtbase5-dev,
  ${misc:Depends}
 Multi-Arch: same
@@ -42,7 +42,7 @@ Description: ${source:Synopsis} (development)
  This package provides header files and CMake configuration files for
  development.
 
-Package: libdbusmenu-qt5-doc
+Package: libdbusmenu-qt6-doc
 Section: doc
 Architecture: all
 Depends: libjs-jquery,
