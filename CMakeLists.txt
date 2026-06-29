@@ -25,7 +25,7 @@ set(dbusmenu_qt_lib_PATCH_VERSION 0)
 set(dbusmenu_qt_lib_VERSION ${dbusmenu_qt_lib_SOVERSION}.${dbusmenu_qt_lib_API_VERSION}.${dbusmenu_qt_lib_PATCH_VERSION})
 
 # Check if we want to explicitly select the Qt version to be used or autodetect
-if (NOT USE_QT4 AND NOT USE_QT5)
+if (NOT USE_QT4 AND NOT USE_QT5 AND NOT USE_QT6)
     # Autodetect, prefering Qt5
     message(STATUS "Autodetecting Qt version to use")
     find_package(Qt5Widgets QUIET)
@@ -35,7 +35,15 @@ if (NOT USE_QT4 AND NOT USE_QT5)
 endif()
 
 # Detect for which Qt version we're building
-if (USE_QT5)
+if (USE_QT6)
+    find_package(Qt6 REQUIRED COMPONENTS Core Widgets DBus)
+    include_directories(${Qt5Widgets_INCLUDE_DIRS} ${Qt5DBus_INCLUDE_DIRS})
+    set(CMAKE_AUTOMOC ON)
+    set(CMAKE_AUTOMOC_RELAXED_MODE ON)
+    set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+    set(QT_SUFFIX "qt6")
+elseif (USE_QT5)
     find_package(Qt5Widgets REQUIRED)
     find_package(Qt5DBus REQUIRED)
     include_directories(${Qt5Widgets_INCLUDE_DIRS} ${Qt5DBus_INCLUDE_DIRS})
@@ -69,9 +77,9 @@ if (__DBUSMENU_HAVE_W_OVERLOADED_VIRTUAL)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Woverloaded-virtual")
 endif (__DBUSMENU_HAVE_W_OVERLOADED_VIRTUAL)
 
-check_cxx_compiler_flag(-std=c++11 __DBUSMENU_HAVE_CXX11)
+check_cxx_compiler_flag(-std=c++17 __DBUSMENU_HAVE_CXX11)
 if (__DBUSMENU_HAVE_CXX11)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif (__DBUSMENU_HAVE_CXX11)
 
 include(CMakePackageConfigHelpers)
@@ -103,12 +111,10 @@ add_dependencies(distcheck dist)
 configure_file(dbusmenu-qt.pc.in ${CMAKE_BINARY_DIR}/dbusmenu-${QT_SUFFIX}.pc @ONLY)
 
 install(FILES ${CMAKE_BINARY_DIR}/dbusmenu-${QT_SUFFIX}.pc
-        DESTINATION ${LIB_DESTINATION}/pkgconfig
+        DESTINATION lib/pkgconfig
     )
 
 add_subdirectory(src)
-add_subdirectory(tests)
-add_subdirectory(tools)
 
 if(WITH_DOC)
     configure_file(Doxyfile.in ${CMAKE_BINARY_DIR}/Doxyfile @ONLY)
@@ -118,7 +124,7 @@ if(WITH_DOC)
         )
 
     install(DIRECTORY ${CMAKE_BINARY_DIR}/html/
-        DESTINATION share/doc/libdbusmenu-${QT_SUFFIX}-doc
+        DESTINATION share/doc/libdbusmenu-${QT_SUFFIX}
         )
 endif(WITH_DOC)
 

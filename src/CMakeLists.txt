@@ -21,20 +21,23 @@ if (__DBUSMENU_HAVE_W_ALL)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")
 endif (__DBUSMENU_HAVE_W_ALL)
 
-check_cxx_compiler_flag(-std=c++11 __DBUSMENU_HAVE_CXX11)
+check_cxx_compiler_flag(-std=c++17 __DBUSMENU_HAVE_CXX11)
 if (__DBUSMENU_HAVE_CXX11)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif (__DBUSMENU_HAVE_CXX11)
 
 # Check whether QIcon::name() exists. It was added in late Qt 4.7 cycle, and is
 # not present in betas.
 
-if (NOT USE_QT5)
+if (NOT USE_QT5 AND NOT USE_QT6)
     set(CMAKE_REQUIRED_INCLUDES "${QT_INCLUDE_DIR}")
     set(CMAKE_REQUIRED_LIBRARIES "${QT_QTGUI_LIBRARIES};${QT_QTCORE_LIBRARIES}")
-else()
+elseif(USE_QT5)
     set(CMAKE_REQUIRED_INCLUDES "${Qt5Gui_INCLUDE_DIRS};${Qt5Core_INCLUDE_DIRS}")
     set(CMAKE_REQUIRED_LIBRARIES "${Qt5Gui_LIBRARIES};${Qt5Core_LIBRARIES}")
+else()
+    set(CMAKE_REQUIRED_INCLUDES "${Qt6Gui_INCLUDE_DIRS};${Qt6Core_INCLUDE_DIRS}")
+    set(CMAKE_REQUIRED_LIBRARIES "${Qt6Gui_LIBRARIES};${Qt6Core_LIBRARIES}")    
 endif()
 check_cxx_source_compiles("
 #include <QtGui/QIcon>
@@ -64,14 +67,19 @@ include_directories(
     ${CMAKE_BINARY_DIR}/src
     )
 
-if (NOT USE_QT5)
+if (NOT USE_QT5 AND NOT USE_QT6)
     qt4_automoc(${dbusmenu_qt_SRCS})
     qt4_add_dbus_adaptor(dbusmenu_qt_SRCS
         ${CMAKE_CURRENT_SOURCE_DIR}/com.canonical.dbusmenu.xml
         ${CMAKE_CURRENT_SOURCE_DIR}/dbusmenuexporterdbus_p.h DBusMenuExporterDBus
         )
-else()
+elseif(USE_QT5)
     qt5_add_dbus_adaptor(dbusmenu_qt_SRCS
+        ${CMAKE_CURRENT_SOURCE_DIR}/com.canonical.dbusmenu.xml
+        ${CMAKE_CURRENT_SOURCE_DIR}/dbusmenuexporterdbus_p.h DBusMenuExporterDBus
+        )
+else()
+    qt6_add_dbus_adaptor(dbusmenu_qt_SRCS
         ${CMAKE_CURRENT_SOURCE_DIR}/com.canonical.dbusmenu.xml
         ${CMAKE_CURRENT_SOURCE_DIR}/dbusmenuexporterdbus_p.h DBusMenuExporterDBus
         )
@@ -88,7 +96,7 @@ set_target_properties(dbusmenu-${QT_SUFFIX} PROPERTIES
     )
 
 
-if (NOT USE_QT5)
+if (NOT USE_QT5 AND NOT USE_QT6)
     target_link_libraries(dbusmenu-${QT_SUFFIX}
         ${QT_QTGUI_LIBRARIES}
         ${QT_QTDBUS_LIBRARIES}
@@ -96,10 +104,10 @@ if (NOT USE_QT5)
         )
 else()
     target_link_libraries(dbusmenu-${QT_SUFFIX}
-        ${Qt5Gui_LIBRARIES}
-        ${Qt5Core_LIBRARIES}
-        ${Qt5DBus_LIBRARIES}
-        ${Qt5Widgets_LIBRARIES}
+        Qt::Gui
+        Qt::Core
+        Qt::DBus
+        Qt::Widgets
         )
 endif()
 
