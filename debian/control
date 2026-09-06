@@ -33,7 +33,7 @@ Package: libdbusmenu-qt6-dev
 Section: libdevel
 Architecture: any
 Depends: libdbusmenu-qt6-2 (= ${binary:Version}),
- qtbase5-dev,
+ qt6-base-dev,
  ${misc:Depends}
 Multi-Arch: same
 Description: ${source:Synopsis} (development)
