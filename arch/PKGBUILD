@@ -1,0 +1,35 @@
+# Maintainer: CharOfString <root@charofstring.cc>
+pkgname=libdbusmenu-qt6-git
+pkgver=0.9.3.16.04.20160218
+pkgrel=6
+pkgdesc='Qt6 implementation of the DBusMenu protocol (GXDE port of libdbusmenu-qt)'
+arch=('x86_64' 'aarch64')
+url="https://github.com/GXDE-OS/libdbusmenu-qt6"
+license=('LGPL-2.0-or-later')
+depends=('qt6-base' 'libgcc' 'libstdc++' 'glibc')
+makedepends=('git' 'cmake' 'ninja')
+provides=("libdbusmenu-qt6=$pkgver")
+conflicts=('libdbusmenu-qt6')
+source=()
+sha512sums=()
+
+# 直接使用 PKGBUILD 所在的 git 仓库作为源码 ・ Build from the git checkout this PKGBUILD lives in.
+_srcroot() {
+  git -C "$startdir" rev-parse --show-toplevel
+}
+
+build() {
+  # 与 debian/rules 相同 ・ Same as debian/rules.
+  cmake -B build -S "$(_srcroot)" -GNinja \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -DUSE_QT6=True \
+    -DWITH_DOC=OFF
+  ninja -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" ninja -C build install
+}
