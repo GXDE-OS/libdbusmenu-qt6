@@ -1,5 +1,5 @@
 # Maintainer: CharOfString <root@charofstring.cc>
-pkgname=libdbusmenu-qt6-git
+pkgname=libdbusmenu-qt6
 pkgver=0.9.3.16.04.20160218
 pkgrel=6
 pkgdesc='Qt6 implementation of the DBusMenu protocol (GXDE port of libdbusmenu-qt)'
@@ -8,8 +8,9 @@ url="https://github.com/GXDE-OS/libdbusmenu-qt6"
 license=('LGPL-2.0-or-later')
 depends=('qt6-base' 'libgcc' 'libstdc++' 'glibc')
 makedepends=('git' 'cmake' 'ninja')
-provides=("libdbusmenu-qt6=$pkgver")
-conflicts=('libdbusmenu-qt6')
+provides=("libdbusmenu-qt6-git=$pkgver")
+conflicts=('libdbusmenu-qt6-git')
+replaces=('libdbusmenu-qt6-git')
 source=()
 sha512sums=()
 
